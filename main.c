@@ -11,14 +11,15 @@ int main(){
     printf("\t-----------------------\n");
     printf("Enter a password :");
     scanf("%s",passWord);
-    int length=strlen(passWord); //length of entered password
-    int i=0,j=1,lwrCase=0,uprCase=0,splCase=0,digit=0,space=0,repeat=0,len=0; //initialisation
-    if((length>=8)&&(length<=12))
+    int length = strlen(passWord); //length of entered password
+    int i=0, j=1, lwrCase=0, uprCase=0, splCase=0, digit=0, space=0, repeat=0, len=0; //initialization
+    if((length >= 8)&&(length <= 12))
     len++;
     if(length>12)
     len++;
+
     while(i<length){
-        for(i=0;i<length;i++){       //logic for password strength testing
+        for(i=0; i<length; i++){       //logic for password strength testing
             if(isupper(passWord[i])) 
                 uprCase++;
             else if(islower(passWord[i]))
@@ -31,17 +32,16 @@ int main(){
                 space++;
         }
         int temp=length;
-        for(i=0;i<length;i++){
+        for(i=0; i<length; i++){
             while(j<temp)
                 if(passWord[i]!=passWord[i+j]){
                 repeat+=2;
                 temp--;
             }
         }
-
-        }
+    }
         printf("Result :");
-        int score=lwrCase+uprCase+splCase+digit+space+repeat+len;
+        int score = lwrCase + uprCase + splCase + digit + space + repeat + len;
         if((score>=1)&&(score<=10))
             printf("Weak\n");
         else if((score>=11)&&(score<=20))
@@ -53,8 +53,8 @@ int main(){
         else if(score>35)
             printf("Immaculate\n");
 
-        
-        }
+    return 0;
+}
 
 
 
