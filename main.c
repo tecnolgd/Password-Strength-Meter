@@ -12,7 +12,8 @@ int main(){
     printf("Enter a password :");
     scanf("%s",passWord);
     int length = strlen(passWord); //length of entered password
-    int i=0, j=1, lwrCase=0, uprCase=0, splCase=0, digit=0, space=0, repeat=0, len=0; //initialization
+
+    int i=0, j=1, lwrCase=0, uprCase=0, splCase=0, digit=0, space=0, repeat=0, len=0; //initialization of parameters
     if((length >= 8)&&(length <= 12))
     len++;
     if(length>12)
@@ -32,35 +33,30 @@ int main(){
                 space++;
         }
         int temp=length;
+
         for(i=0; i<length; i++){
-            while(j<temp)
+            while(j<temp){
                 if(passWord[i]!=passWord[i+j]){
-                repeat+=2;
-                temp--;
+                    repeat+=2;
+                    temp--;
+                }
             }
         }
     }
-        printf("Result :");
-        int score = lwrCase + uprCase + splCase + digit + space + repeat + len;
-        if((score>=1)&&(score<=10))
-            printf("Weak\n");
-        else if((score>=11)&&(score<=20))
-            printf("Mediocre\n");
-        else if((score>=21)&&(score<=30))
-            printf("Strong\n");
-        else if((score>=31)&&(score<=35))
-            printf("Very Strong\n");
-        else if(score>35)
-            printf("Immaculate\n");
+    printf("Result :");
+    
+    int score = lwrCase + uprCase + splCase + digit + space + repeat + len;
+
+    if((score>=1)&&(score<=10))
+        printf("Weak\n");
+    else if((score>=11)&&(score<=20))
+        printf("Mediocre\n");
+    else if((score>=21)&&(score<=30))
+        printf("Strong\n");
+    else if((score>=31)&&(score<=35))
+        printf("Very Strong\n");
+    else if(score>35)
+        printf("Immaculate\n");
 
     return 0;
 }
-
-
-
-
-
-        
-    
-
-
