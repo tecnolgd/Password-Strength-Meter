@@ -45,6 +45,13 @@ Built to strengthen core programming concepts — **loops**, **conditions**, and
 ## How to Run?
 
 1. Clone the repo and open folder in the terminal
+    ```bash
+    git clone https://github.com/tecnolgd/Password-Strength-Meter.git
+    ```
+    ```
+    cd Password-Strength-Meter
+    ```
+    
 2. Compile the file using any C compiler:
     ```bash
     gcc main.c -o main && main //for windows 
